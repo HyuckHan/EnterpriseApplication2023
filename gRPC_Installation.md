@@ -1,6 +1,6 @@
 ### gRPC - Java 환경 구축
 
-1. Protocol Buffer 설치
+## Protocol Buffer 설치
 
 아래 웹 사이트에서 linux(x86-64) 버전을 다운로드. 
 23년 9월 12일 기준 protoc-24.3-linux-x86_64.zip

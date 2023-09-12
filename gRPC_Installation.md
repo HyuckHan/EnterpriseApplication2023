@@ -1,4 +1,4 @@
-### gRPC - Java 환경 구축
+# gRPC - Java 환경 구축
 
 ## Protocol Buffer 설치
 

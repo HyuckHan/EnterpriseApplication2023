@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="mini-project" default="jar" basedir=".">
+	<property name="build.dir"             location="build"/>
+	<property name="build.prod.dir"         location="${build.dir}/classes"/>
+	<property name="client_src.dir"                location="client_src"/>
+	<property name="server_src.dir"                location="server_src"/>
+	<property name="stub_src.dir"                location="stub_src"/>
+	<property name="lib.dir"                location="../lib"/>
+	<property name="proto.path"                location="proto"/>
+	<property name="jar.file" value="${build.dir}/mini-project.jar"/>
+
+	<path id="project.classpath">
+		<fileset dir="${lib.dir}/">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="prepare">
+		<mkdir dir="${build.prod.dir}" />
+		<mkdir dir="${stub_src.dir}" />
+	</target>
+
+	<target name="proto_compile" depends="prepare">
+		<exec executable="../protoc" failonerror="true">
+			<arg value="--java_out=${stub_src.dir}" />
+			<arg value="--grpc-java_out=${stub_src.dir}" />
+			<arg value="--plugin=protoc-gen-grpc-java=../protoc-gen-grpc-java" />
+			<arg value="--proto_path=${proto.path}" />
+			<arg line="${proto.path}/helloworld.proto" />
+    		</exec>
+	</target>
+
+
+	<target name="stub_compile" depends="proto_compile">
+		<javac includeantruntime="false" srcdir="${stub_src.dir}" destdir="${build.prod.dir}">
+			<classpath refid="project.classpath" />
+		</javac>
+	</target>
+
+	<target name="client_compile" depends="stub_compile">
+		<javac includeantruntime="false" srcdir="${client_src.dir}" destdir="${build.prod.dir}">
+			<classpath refid="project.classpath" />
+		</javac>
+	</target>
+	
+	<target name="server_compile" depends="stub_compile">
+		<javac includeantruntime="false" srcdir="${server_src.dir}" destdir="${build.prod.dir}">
+			<classpath refid="project.classpath" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="client_compile,server_compile">
+ 		<jar jarfile="${jar.file}" basedir="${build.prod.dir}">
+ 		</jar>
+	</target>
+
+</project>
+

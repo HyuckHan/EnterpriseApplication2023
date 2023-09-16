@@ -44,11 +44,11 @@ $ ./gen_certs.sh
 ### Run the server
 
 ```
-$ java -cp java -cp "build/mini-project.jar:../lib/*" HelloWorldServer
+$ java -cp "build/mini-project.jar:../lib/*:../lib/ssl/*" HelloWorldServer
 ```
 
 ### Run the client
 
 ```
-$ java -cp java -cp "build/mini-project.jar:../lib/*" HelloWorldClient
+$ java -cp "build/mini-project.jar:../lib/*:../lib/ssl/*" HelloWorldClient
 ```

@@ -1,8 +1,10 @@
 import io.grpc.Channel;
 import io.grpc.Grpc;
-import io.grpc.InsecureChannelCredentials;
+import io.grpc.TlsChannelCredentials;
+import io.grpc.ChannelCredentials;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,10 +31,12 @@ public class HelloWorldClient {
         // Create a communication channel to the server, known as a Channel. Channels are thread-safe
         // and reusable. It is common to create channels at the beginning of your application and reuse
         // them until the application shuts down.
-        //
-        // For the example we use plaintext insecure credentials to avoid needing TLS certificates. To
-        // use TLS, use TlsChannelCredentials instead.
-        ManagedChannel channel = Grpc.newChannelBuilder(target, InsecureChannelCredentials.create())
+
+        ChannelCredentials creds = TlsChannelCredentials.newBuilder()
+                .trustManager(new File("ssl/ca.crt"))
+                .build();
+
+        ManagedChannel channel = Grpc.newChannelBuilder(target, creds)
             .build();
         try {
             blockingStub = GreeterGrpc.newBlockingStub(channel);

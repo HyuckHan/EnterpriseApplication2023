@@ -12,7 +12,9 @@ $ cd ~/bigdata
 $ wget https://services.gradle.org/distributions/gradle-8.3-bin.zip
 $ sudo mkdir /opt
 $ sudo unzip -d /opt/gradle gradle-8.3-bin.zip
+$ sudo mv /opt/gradle/gradle-8.3 /opt
 $ cd /opt
+$ sudo rmdir gradle
 $ sudo ln -s gradle-8.3 gradle
 ```
 

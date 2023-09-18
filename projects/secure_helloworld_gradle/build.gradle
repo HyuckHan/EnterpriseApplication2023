@@ -75,3 +75,15 @@ def createStartScripts(String mainClassName) {
 
 createStartScripts('HelloWorldClient')
 createStartScripts('HelloWorldServer')
+
+
+////task copyReportsDirForArchiving(type: Copy) {
+    ////from "ssl"
+    //into "$buildDir/toArchive"
+//}
+
+tasks.register('copySSL', Copy) {
+    from 'ssl'
+    into "$buildDir"
+}
+

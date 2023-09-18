@@ -4,7 +4,7 @@
 
 ```
 $ sudo apt-get update
-$ sudo apt-get install openjdk-11-jdk an
+$ sudo apt-get install openjdk-11-jdk ant
 ```
 
 아래의 커맨드를 이용해서 ~/.bashrc 수정

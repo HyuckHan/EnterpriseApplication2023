@@ -28,7 +28,7 @@ Visit https://services.gradle.org/distributions/.
 2023-09-13일 기준으로 gradle-8.3-bin.zip
 
 ```
-$ cd ~/bigdata
+$ cd /tmp
 $ wget https://services.gradle.org/distributions/gradle-8.3-bin.zip
 $ sudo mkdir /opt
 $ sudo unzip -d /opt gradle-8.3-bin.zip

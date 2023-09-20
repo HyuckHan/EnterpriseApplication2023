@@ -13,7 +13,6 @@ public class CalculatorClient {
     private static CalculatorGrpc.CalculatorBlockingStub blockingStub;
 
     public static void main(String[] args) throws Exception {
-        String user = "world";
         String target = "localhost:50051";
         
         ManagedChannel channel = Grpc.newChannelBuilder(target, InsecureChannelCredentials.create()).build();

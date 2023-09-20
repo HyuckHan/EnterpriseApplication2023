@@ -1,6 +1,6 @@
 # HelloWorld (Gradle)
 
-## Generatie Gradle Wrapper
+## Generate Gradle Wrapper
 
 ```
 $ gradle wrapper

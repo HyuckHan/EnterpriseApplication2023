@@ -73,5 +73,5 @@ def createStartScripts(String mainClassName) {
     }
 }
 
-//createStartScripts('HelloWorldClient')
+createStartScripts('CalculatorClient')
 //createStartScripts('HelloWorldServer')

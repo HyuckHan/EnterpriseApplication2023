@@ -9,7 +9,7 @@ https://zookeeper.apache.org/releases.html#download
 
 2023-09-21일 기준 3.9.0
 ```
-cd /tmp 
+$ cd /tmp 
 $ wget https://dlcdn.apache.org/zookeeper/zookeeper-3.9.0/apache-zookeeper-3.9.0-bin.tar.gz
 $ sudo tar -xvf /tmp/apache-zookeeper-3.9.0-bin.tar.gz -C /usr/local
 $ sudo ln -s /usr/local/apache-zookeeper-3.9.0-bin /usr/local/apache-zookeeper
@@ -24,6 +24,7 @@ $ sudo cp zoo_sample.cfg zoo.cfg
 $ sudo vi zoo.cfg
 ```
 zoo.cfg에서 아래 설정을 변경
+
 dataDir=/tmp/zookeeper
 --> dataDir=/usr/local/apache-zookeeper/data
 

@@ -58,7 +58,7 @@ public class HelloWorldServer {
      */
     public static void main(String[] args) throws IOException, InterruptedException {
         int port = 50051;
-        String zk_addr = "localhost:2181";
+        String zk_addr = "zk://localhost:2181";
         final HelloWorldServer server = new HelloWorldServer();
         server.start(port);
         ZookeeperConnection zk_conn = new ZookeeperConnection();

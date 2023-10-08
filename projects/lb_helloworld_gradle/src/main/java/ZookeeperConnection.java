@@ -31,12 +31,19 @@ public class ZookeeperConnection {
      * Connects to a zookeeper ensemble in zkUriStr.
      * serverIp and portStr are the IP/Port of this server.
      */
-    public boolean connect(String zkAddr, String serverIp, String portStr)
+    public boolean connect(String zkUriStr, String serverIp, String portStr)
             throws IOException,InterruptedException {
             final CountDownLatch connectedSignal = new CountDownLatch(1);
             String zkhostport;
-            
-            zoo = new ZooKeeper(zkAddr, TIMEOUT_MS, new Watcher() {
+            try {
+                URI zkUri = new URI(zkUriStr);
+                zkhostport = zkUri.getHost().toString() + ":" + Integer.toString(zkUri.getPort());
+            } catch (Exception e) {
+                logger.severe("Could not parse zk URI " + zkUriStr);
+                return false;
+            }
+
+            zoo = new ZooKeeper(zkhostport, TIMEOUT_MS, new Watcher() {
                 public void process(WatchedEvent we) {
                     if (we.getState() == KeeperState.SyncConnected) {
                         connectedSignal.countDown();

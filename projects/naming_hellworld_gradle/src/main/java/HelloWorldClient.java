@@ -46,7 +46,7 @@ public class HelloWorldClient {
         ZooKeeper zoo = null;
         final CountDownLatch connectedSignal = new CountDownLatch(1);
         try {
-            String zkaddr = "localhost:2181";
+            String zkaddr = "zk://localhost:2181";
             logger.info("Connecting to Zookeeper Address " + zkaddr);
 
             zoo = new ZooKeeper(zkaddr, TIMEOUT_MS, new Watcher() {

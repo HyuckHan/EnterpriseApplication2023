@@ -27,17 +27,17 @@ $ /usr/local/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 
 Kafka topic 생성
 ```
-$ /usr/local/kafka/bin/kafka-topics.sh --create --topic test_topic_00 --bootstrap-server localhost:9092
+$ /usr/local/kafka/bin/kafka-topics.sh --create --topic TestTopic00 --bootstrap-server localhost:9092
 $ /usr/local/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-$ /usr/local/kafka/bin/kafka-topics.sh --describe --topic test_topic_00 --bootstrap-server localhost:9092
+$ /usr/local/kafka/bin/kafka-topics.sh --describe --topic TestTopic00 --bootstrap-server localhost:9092
 ```
 
 Sample Producer
 ```
-/usr/local/kafka/bin/kafka-console-producer.sh --topic test_topic_00 --bootstrap-server localhost:9092
+/usr/local/kafka/bin/kafka-console-producer.sh --topic TestTopic00 --bootstrap-server localhost:9092
 ```
 
 Sample Consumer
 ```
-/usr/local/kafka/bin/kafka-console-consumer.sh --topic test_topic_00 --bootstrap-server localhost:9092
+/usr/local/kafka/bin/kafka-console-consumer.sh --topic TestTopic00 --bootstrap-server localhost:9092
 ```

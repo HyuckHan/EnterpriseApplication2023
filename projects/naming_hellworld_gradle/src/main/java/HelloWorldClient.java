@@ -67,6 +67,7 @@ public class HelloWorldClient {
             Stat stat = zoo.exists(PATH, true);
             if (stat == null) {
                 logger.info("PATH does not exist.");
+                return;
             } else {
                 logger.info("PATH exists");
             }

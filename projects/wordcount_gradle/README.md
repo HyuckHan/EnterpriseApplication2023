@@ -15,5 +15,5 @@ $ ./gradlew build
 ## Run 
 
 ```
-$ spark-submit --class JavaWordCount  wordcount\_gradle.jar inputfile outputfolder
+$ spark-submit --class JavaWordCount  wordcount_gradle.jar inputfile outputfolder
 ```

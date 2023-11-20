@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+	implementation group: 'org.apache.spark', name: 'spark-core_2.13', version: '3.2.1'
+	compileOnly group: 'org.apache.spark', name: 'spark-sql_2.13', version: '3.2.1'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+

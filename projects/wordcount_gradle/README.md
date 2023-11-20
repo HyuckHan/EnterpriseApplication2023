@@ -10,8 +10,8 @@ $ gradle wrapper
 
 ```
 $ ./gradlew build
-`
-``
+```
+
 ## Run 
 
 ```

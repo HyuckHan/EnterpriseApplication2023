@@ -10,4 +10,10 @@ $ gradle wrapper
 
 ```
 $ ./gradlew build
+`
+``
+## Run 
+
+```
+$ spark-submit --class JavaWordCount  wordcount\_gradle.jar inputfile outputfolder
 ```

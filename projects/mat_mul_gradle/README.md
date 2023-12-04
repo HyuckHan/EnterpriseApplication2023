@@ -1,4 +1,4 @@
-# WordCount (Gradle)
+# MatrixMulitplication (Gradle)
 
 ## Generate Gradle Wrapper
 
